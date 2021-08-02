@@ -29,6 +29,12 @@ namespace SeleniumCSharpNetCore
 
             Driver.FindElement(By.XPath("//input[@name='ctl00$ContentPlaceHolder1$ChildMeal1']/following-sibling::div[text()='Celery']")).Click();
 
+            IWebElement comboControl = Driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_AllMealsCombo-awed']"));
+
+            comboControl.Clear();
+            comboControl.SendKeys("Almond");
+            Driver.FindElement(By.XPath("//div[@id='ContentPlaceHolder1_AllMealsCombo-dropmenu']//li[text()='Almond']")).Click();
+
             Console.WriteLine("Test1");
             Assert.Pass();
         }
